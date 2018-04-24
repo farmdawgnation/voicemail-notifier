@@ -27,6 +27,6 @@
                                              source-phone-number
                                              message-text)
           resulting-message (.create message-creator)]
-      {:body {:status "ok"}})
+      {:body {:result "ok"}})
 
-    {:status 401 :body {:status "access denied"}}))
+    {:status 401 :body {:result "access denied"}}))
