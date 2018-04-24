@@ -19,7 +19,7 @@
 (defn notify
   "Notify that a voicemail has been received"
   [provided-secret recording-url]
-  (if (== provided-secret callback-secret)
+  (if (.equals provided-secret callback-secret)
     (let [_ (. Twilio init account-sid auth-token)
           message-text (str "Twilio has received a new voicemail: "
                             recording-url)
