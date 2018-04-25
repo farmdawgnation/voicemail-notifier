@@ -1,5 +1,6 @@
 (ns voicemail-notifier.handler
   (:require [voicemail-notifier.core :as vncore]
+            [voicemail-notifier.middleware :refer [wrap-request-validation]]
             [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.json :refer [wrap-json-response]]
@@ -12,4 +13,5 @@
 
 (def app
   (-> app-routes wrap-json-response
+                 wrap-request-validation
                  (wrap-defaults api-defaults)))
