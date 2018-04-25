@@ -12,6 +12,6 @@
   (route/not-found {:body {:error "Not found"}}))
 
 (def app
-  (-> app-routes wrap-json-response
-                 wrap-request-validation
+  (-> app-routes wrap-request-validation
+                 wrap-json-response
                  (wrap-defaults api-defaults)))

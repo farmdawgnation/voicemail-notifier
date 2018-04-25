@@ -18,10 +18,11 @@
   (if config/validation-enabled?
     (fn [request]
       (let [validator (new RequestValidator config/auth-token)
-            _ (println request)
             url (:uri request)
             verb (:request-method request)
             params (:params request)
             twilio-sig (get request "x-twilio-signature")]
-        (handler request)))
+        (if (.validate validator url params twilio-sig)
+          (handler request)
+          {:status 401 :body {:error "Invalid signature."}})))
     handler))
