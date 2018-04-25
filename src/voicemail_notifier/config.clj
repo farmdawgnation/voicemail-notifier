@@ -6,7 +6,15 @@
 
 (def account-sid (.getString config "account.sid"))
 
-(def auth-token (.getString config "auth.token"))
+(def auth-token
+  (let [env-token (if (.hasPath config "auth.token")
+                    (.getString config "auth.token")
+                    nil)
+        file-token-path (if (.hasPath config "file.auth.token")
+                          (.getString config "file.auth.token")
+                          nil)]
+    (or env-token
+        (slurp file-token-path))))
 
 (def source-phone-number (new PhoneNumber (.getString config "source.number")))
 
