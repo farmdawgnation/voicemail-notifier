@@ -7,7 +7,8 @@
                  [ring/ring-defaults "0.2.1"]
                  [ring/ring-json "0.4.0"]
                  [com.twilio.sdk/twilio "7.17.0"]
-                 [com.typesafe/config "1.3.2"]]
+                 [com.typesafe/config "1.3.2"]
+                 [ch.qos.logback/logback-classic "1.2.3"]]
   :plugins [[lein-ring "0.12.4"]]
   :ring {:handler voicemail-notifier.handler/app}
   :profiles
