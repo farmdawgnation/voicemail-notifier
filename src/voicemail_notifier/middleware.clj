@@ -21,7 +21,7 @@
             url (:uri request)
             verb (:request-method request)
             params (:params request)
-            twilio-sig (get request "x-twilio-signature")]
+            twilio-sig (get (:headers request) "x-twilio-signature")]
         (if (.validate validator url params twilio-sig)
           (handler request)
           {:status 401 :body {:error "Invalid signature."}})))
