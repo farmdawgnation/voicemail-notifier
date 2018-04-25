@@ -9,16 +9,13 @@ You will need to provide the following environment variables:
 * `ACCOUNT_SID` - Account SID for your account
 * `AUTH_TOKEN` - Auth token for your account
 * `SOURCE_NUMBER` - A phone number to send from
-* `TARGET_NUMBER` - The phone number to send to
-* `CALLBACK_SECRET` - An arbitrary secret of your choosing to avoid someone
-  discovering this and just spamming the hell out of you by hitting the URL
-  over and over. :)
+* `TARGET_NUMBER` - The phone number to send the notification to
+* `VALIDATION_ENABLED` - Set this to true to enforce Twilio request validation.
+  Any incoming requests from Twilio are signed and turning this on will enforce
+  checking those signatures.
 
-Deploy this then configure `http://domain.to.your.notifer/notify/...` as the
+Deploy this then configure `http://domain.to.your.notifer/notify` as the
 `recordingStatusCallback` on your `<Record>` TwiML element.
-
-For example if my secret were `abcd` might set my `recordingStatusCallback` as
-`http://notifier.farm.dog/notify/abcd`.
 
 ## Prerequisites
 
