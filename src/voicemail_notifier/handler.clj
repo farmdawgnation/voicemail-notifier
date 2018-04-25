@@ -7,7 +7,8 @@
 
 (defroutes app-routes
   (ANY "/notify/:secret" [secret RecordingUrl] (vncore/notify secret RecordingUrl))
-  (route/not-found "Not Found"))
+  (ANY "/ping" [] (vncore/ping))
+  (route/not-found {:body {:error "Not found"}}))
 
 (def app
   (-> app-routes wrap-json-response

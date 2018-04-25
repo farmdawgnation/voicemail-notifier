@@ -3,6 +3,10 @@
   (:import [com.twilio Twilio]
            [com.twilio.rest.api.v2010.account Message]))
 
+(defn ping
+  "Play ping pong"
+  []
+  {:body {:result "pong"}})
 
 (defn notify
   "Notify that a voicemail has been received"
