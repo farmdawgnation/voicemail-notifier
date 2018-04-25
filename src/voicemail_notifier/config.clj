@@ -21,3 +21,5 @@
 (def target-phone-number (new PhoneNumber (.getString config "target.number")))
 
 (def validation-enabled? (.getBoolean config "validation.enabled"))
+
+(def base-url (.getString config "base.url"))

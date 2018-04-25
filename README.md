@@ -15,6 +15,8 @@ You will need to provide the following environment variables:
 * `VALIDATION_ENABLED` - Set this to true to enforce Twilio request validation.
   Any incoming requests from Twilio are signed and turning this on will enforce
   checking those signatures.
+* `BASE_URL` - The Base URL that Twilio will use to contact your server
+  including the http / https prefix. (e.g. http://domain.to.your.notifier)
 
 Deploy this then configure `http://domain.to.your.notifer/notify` as the
 `recordingStatusCallback` on your `<Record>` TwiML element.
