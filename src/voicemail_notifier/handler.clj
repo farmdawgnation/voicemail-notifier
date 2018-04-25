@@ -7,7 +7,7 @@
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
 (defroutes app-routes
-  (ANY "/notify/:secret" [secret RecordingUrl] (vncore/notify secret RecordingUrl))
+  (ANY "/notify" [RecordingUrl] (vncore/notify RecordingUrl))
   (ANY "/ping" [] (vncore/ping))
   (route/not-found {:body {:error "Not found"}}))
 

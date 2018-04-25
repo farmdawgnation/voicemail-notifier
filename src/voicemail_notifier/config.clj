@@ -12,6 +12,4 @@
 
 (def target-phone-number (new PhoneNumber (.getString config "target.number")))
 
-(def callback-secret (.getString config "callback.secret"))
-
 (def validation-enabled? (.getBoolean config "validation.enabled"))
