@@ -1,10 +1,16 @@
 # voicemail-notifier
 
 A simple application to text me when Twilio records a voicemail on my behalf.
-This is distributed as a Docker image if you'd like to use it for yourself.
-You can find it at: farmdawgnation/voicemail-notifier on Docker Hub.
+I use this application on a phone number that had to be made public as a way for
+spammers and auto-dialers to not interrupt my workday, but to still be able to
+receive any important or legal messages that might be left for me.
 
-You will need to provide the following environment variables:
+## Using
+
+This is distributed as a Docker image if you'd like to use it for yourself.
+You can find it at: `farmdawgnation/voicemail-notifier` on Docker Hub.
+
+You will need to provide the following environment variables for it to work:
 
 * `ACCOUNT_SID` - Account SID for your account
 * `AUTH_TOKEN` or `AUTH_TOKEN_FILE` - Auth token for your account. If the file
@@ -21,13 +27,15 @@ You will need to provide the following environment variables:
 Deploy this then configure `http://domain.to.your.notifer/notify` as the
 `recordingStatusCallback` on your `<Record>` TwiML element.
 
-## Prerequisites
+## Development
+
+### Prerequisites
 
 You will need [Leiningen][] 2.0.0 or above installed.
 
 [leiningen]: https://github.com/technomancy/leiningen
 
-## Running
+### Running
 
 To start a web server for the application, run:
 
@@ -35,4 +43,5 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2018 Matt Farmer
+Copyright © 2018 Matt Farmer. Licensed under the terms of the Apache 2.0
+license.
