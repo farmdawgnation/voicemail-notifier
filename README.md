@@ -5,6 +5,10 @@ I use this application on a phone number that had to be made public as a way for
 spammers and auto-dialers to not interrupt my workday, but to still be able to
 receive any important or legal messages that might be left for me.
 
+Twilio's runtime platform handles most of the heavy lifting. This application
+just ensures that I'm notified by SMS when new voicemails are recorded by
+directing Twilio to text me when that happens.
+
 ## Using
 
 ### Deploying the application
