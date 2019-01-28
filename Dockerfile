@@ -1,4 +1,4 @@
-FROM openjdk:8u162-jre
+FROM openjdk:11.0.1-jre-slim-stretch
 
 ADD target/voicemail-notifier-*-standalone.jar /voicemail-notifier-standalone.jar
 
